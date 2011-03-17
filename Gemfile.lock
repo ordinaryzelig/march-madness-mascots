@@ -1,0 +1,23 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    orm_from_csv (0.1.0)
+    rack (1.2.2)
+    sass (3.1.0.alpha.249)
+    sinatra (1.2.0)
+      rack (~> 1.1)
+      tilt (< 2.0, >= 1.2.2)
+    slim (0.9.1)
+      temple (~> 0.1.8)
+      tilt (~> 1.2)
+    temple (0.1.8)
+    tilt (1.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  orm_from_csv (= 0.1.0)
+  sass (= 3.1.0.alpha.249)
+  sinatra (= 1.2.0)
+  slim (= 0.9.1)
