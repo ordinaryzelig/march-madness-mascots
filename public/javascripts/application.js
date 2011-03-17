@@ -3,7 +3,7 @@ function rankMascots() {
   $('.mascot').click(function(e) {
     var mascot = $(this)
     if (!mascot.hasClass('ranked')) {
-      mascot.fadeOut()
+      mascot.fadeOut(function() { mascot.remove() })
       $('#ranks').append("<li>" + mascot.attr('school') + " " + mascot.attr('name') + "</li>")
     }
   })
