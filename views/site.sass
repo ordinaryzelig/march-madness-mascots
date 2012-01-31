@@ -4,6 +4,20 @@ a
 
 body
   font-family: Helvetica
+  margin: 20px
+
+#tags
+  width: 300px
+  li
+    display: inline-block
+    list-style-type: none
+    width: 80px
+    $margin: 10px
+    margin-left: $margin
+    margin-right: $margin
+    margin-bottom: 5px
+    input
+      margin-right: 5px
 
 .mascot
   display: inline-block
@@ -15,7 +29,6 @@ body
     cursor: pointer
   .school, .name
     font-weight: bold
-
-.mascot img.tooltip
-  display: none
-  outline: gray solid 5px
+  img.tooltip
+    display: none
+    outline: gray solid 5px

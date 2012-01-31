@@ -16,6 +16,7 @@ GEM
       coffee-script (>= 2.2.0)
       guard (>= 0.8.3)
     multi_json (1.0.4)
+    orm_from_csv (0.1.0)
     rack (1.2.2)
     sass (3.1.0.alpha.249)
     sinatra (1.2.0)
@@ -32,8 +33,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  growl
+  growl (= 1.0.3)
   guard-coffeescript (= 0.5.4)
+  orm_from_csv (= 0.1.0)
   sass (= 3.1.0.alpha.249)
   sinatra (= 1.2.0)
   slim (= 0.9.1)

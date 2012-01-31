@@ -1,69 +1,69 @@
-school,name
-Akron,Zips
-Alabama State,Hornets
-Arizona,Wildcats
-Arkansas Little Rock,Trojans
-Belmont,Bruins
-Boston University,Terriers
-Bucknell,Bison
-Butler,Bulldogs
-Byu,Cougars
-Cincinnati,Bearcats
-Clemson,Tigers
-Connecticut,Huskies
-Duke,Blue Devils
-Florida,Gators
-Florida State,Seminoles
-George Mason,Patriots
-Georgetown,Hoyas
-Georgia,Bulldogs
-Gonzaga,Bulldogs
-Hampton,Pirates
-Illinois,Fighting Illini
-Indiana State,Sycamores
-Kansas,Jayhawks
-Kansas State,Wildcats
-Kentucky,Wildcats
-Long Island,Blackbirds
-Louisville,Cardinals
-Marquette,Golden Eagles
-Memphis,Tigers
-Michigan,Wolverines
-Michigan State,Spartans
-Missouri,Tigers
-Morehead State,Eagles
-North Carolina,Tarheels
-Northern Colorado,Bears
-Notre Dame,Fighting Irish
-Oakland,Golden Grizzlies
-Ohio State,Buckeyes
-Old Dominion,Monarchs
-Penn State,Nittany Lions
-Pittsburgh,Panthers
-Princeton,Tigers
-Purdue,Boilermakers
-Richmond,Spiders
-Saint Peter's,Peacocks
-San Diego State,Aztecs
-St. John's,Red Storm
-Syracuse,Orangemen
-Temple,Owls
-Tennessee,Volunteers
-Texas,Longhorns
-Texas A&m,Aggies
-UAB,Blazers
-Uc Santa Barbara,Gauchos
-Ucla,Bruins
-UNC Asheville,Bulldogs
-UNLV,Runnin Rebels
-Usc,Trojans
-Utah State,Aggies
-UTSA,Roadrunners
-Vanderbilt,Commodors
-Vcu,Rams
-Villanova,Wildcats
-Washington,Huskies
-West Virginia,Mountaineers
-Wisconsin,Badgers
-Wofford,Terriers
-Xavier,Musketeers
+school,name,tag
+Akron,Zips,other
+Alabama State,Hornets,bug
+Arizona,Wildcats,cat
+Arkansas Little Rock,Trojans,human
+Belmont,Bruins,bear
+Boston University,Terriers,dog
+Bucknell,Bison,horned
+Butler,Bulldogs,dog
+Byu,Cougars,cat
+Cincinnati,Bearcats,other
+Clemson,Tigers,cat
+Connecticut,Huskies,dog
+Duke,Blue Devils,human
+Florida,Gators,reptile
+Florida State,Seminoles,human
+George Mason,Patriots,???
+Georgetown,Hoyas,dog
+Georgia,Bulldogs,dog
+Gonzaga,Bulldogs,dog
+Hampton,Pirates,human
+Illinois,Fighting Illini,human
+Indiana State,Sycamores,???
+Kansas,Jayhawks,bird
+Kansas State,Wildcats,cat
+Kentucky,Wildcats,cat
+Long Island,Blackbirds,bird
+Louisville,Cardinals,bird
+Marquette,Golden Eagles,bird
+Memphis,Tigers,cat
+Michigan,Wolverines,other
+Michigan State,Spartans,human
+Missouri,Tigers,cat
+Morehead State,Eagles,bird
+North Carolina,Tarheels,horned
+Northern Colorado,Bears,bear
+Notre Dame,Fighting Irish,human
+Oakland,Golden Grizzlies,bear
+Ohio State,Buckeyes,???
+Old Dominion,Monarchs,cat
+Penn State,Nittany Lions,cat
+Pittsburgh,Panthers,cat
+Princeton,Tigers,cat
+Purdue,Boilermakers,human
+Richmond,Spiders,bug
+Saint Peter's,Peacocks,bird
+San Diego State,Aztecs,human
+St. John's,Red Storm,bird
+Syracuse,Orangemen,???
+Temple,Owls,bird
+Tennessee,Volunteers,dog
+Texas,Longhorns,horned
+Texas A&m,Aggies,dog
+UAB,Blazers,reptile
+Uc Santa Barbara,Gauchos,human
+Ucla,Bruins,bear
+UNC Asheville,Bulldogs,dog
+UNLV,Runnin Rebels,human
+Usc,Trojans,human
+Utah State,Aggies,dog
+UTSA,Roadrunners,bird
+Vanderbilt,Commodors,human
+Vcu,Rams,horned
+Villanova,Wildcats,cat
+Washington,Huskies,dog
+West Virginia,Mountaineers,human
+Wisconsin,Badgers,other
+Wofford,Terriers,dog
+Xavier,Musketeers,???

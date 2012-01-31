@@ -12,14 +12,22 @@ p
     Reload the page to 
   a href='/' start over
 p
-  label for='search' Search school or mascot: 
-  input#search.quicksearch type='text' autofocus=''
+  label{for='search'} Search school or mascot: 
+  input#search.quicksearch{type='text' autofocus=''}
+
+' Filter:
+ul#tags
+  - Mascot.tags.each do |tag|
+    li.tag
+      label
+        input{type='checkbox' data-name=tag}
+        = tag
 
 ul#mascots
   - @mascots.each_with_index do |mascot, i|
-    li.mascot[school={mascot.school} name={mascot.name}]
-      img.tooltipHover src={mascot.image_url} height=100 width=100
-      img.tooltip src={mascot.image_url}
+    li.mascot{data-school=mascot.school data-name=mascot.name class=mascot.tag}
+      img.tooltipHover{src=mascot.image_url height=100 width=100}
+      img.tooltip{src=mascot.image_url}
       .school= mascot.school
       .name= mascot.name
 

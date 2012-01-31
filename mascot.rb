@@ -1,13 +1,17 @@
 require 'csv'
 
-class Mascot < Struct.new(:school, :name)
+class Mascot < Struct.new(:school, :name, :tag)
 
   extend ORMFromCSV
 
   class << self
 
     def all
-      from_csv File.open('./mascots.csv')
+      @all ||= from_csv File.open('./mascots.csv')
+    end
+
+    def tags
+      @tags ||= all.map(&:tag).uniq.sort
     end
 
   end
