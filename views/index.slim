@@ -1,21 +1,38 @@
-p
-  |
-    To help you fill out your march madness bracket, here are all 68 mascots for this year.
-    Click on your favorite mascot. It will be added to the ranks at the bottom.
-    Keep choosing your next favorite mascots.
-    When they are all gone, you'll be left with a list of all the mascots from your favorite on down to your least favorite.
-    Copy/paste them so you won't lose them.
-    For unbiasedness, mascots are 
-  a href='/' randomized
-  |
-    .
-    Reload the page to 
-  a href='/' start over
-p
-  label{for='search'} Search school or mascot: 
-  input#search.quicksearch{type='text' autofocus=''}
+div#yearSelection
+  label{for="yearSelect"} Select a different year 
+  select#yearSelect
+    - Mascot.years.reverse.each do |year|
+      option{value=year selected=(@year == year)} #{year}
 
-' Filter:
+a.howRank Rank your mascots
+br
+
+ul.instructions.howRank
+  li Click on your favorite mascot.
+  li It will be moved to the Ranks section at the bottom.
+  li Keep choosing your next favorite mascots until they are all gone.
+  li After ranking all the mascots, fill out your bracket according to rank.
+
+a.howBracket Then, fill out your bracket
+br
+
+ul.instructions.howBracket
+  li After ranking all the mascots, take the mascot at the top of the ranks.
+  li Find their team on your bracket.
+  li For their next game, if the space is empty, fill it with this team.
+  li
+    | Continue to do this for each of their next games until either:
+    ul
+      li there is no empty space (another team is already there), or
+      li the team wins the national championship.
+  li Once a team goes as far as they can, take the next team from the top of the ranks and repeat.
+  li Keep doing this until your entire bracket is filled out.
+
+p
+  label{for='search'} Search: 
+  input#search.quicksearch{type='text' autofocus='' placeholder='Team or Mascot'}
+
+' Show only:
 ul#tags
   - Mascot.tags.each do |tag|
     li.tag
@@ -32,5 +49,7 @@ ul#mascots
       .name= mascot.name
 
 h1 Ranks
+
+p Save these so you don't lose them.
 
 ol#ranks

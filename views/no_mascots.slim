@@ -1,0 +1,7 @@
+h2 Sorry, no mascots for #{@year}.
+
+h3 Choose another year:
+ul
+  - Mascot.years.reverse.each do |year|
+    li
+      a[href="/#{year}"] #{year}
