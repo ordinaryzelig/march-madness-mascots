@@ -6,6 +6,7 @@ class Mascot < Struct.new(:school, :name, :tag)
 
   class << self
 
+    # All mascots as grouped hash by year.
     def all
       @all ||= Dir['./db/*.csv'].each_with_object({}) do |file, hash|
         year = file.match(/(?<year>\d+)\.csv/)[:year].to_i
@@ -13,18 +14,12 @@ class Mascot < Struct.new(:school, :name, :tag)
       end
     end
 
+    # All unique tags as grouped hash by year.
     def tags
-      @tags ||= all.map do |_, mascots|
-        mascots.map(&:tag)
-      end.flatten.uniq.sort
-    end
-
-    def years
-      all.keys.sort
-    end
-
-    def latest_year
-      years.last
+      return @tags if @tags
+      @tags = all.each_with_object({}) do |(year, mascots), hash|
+        hash[year] = mascots.map(&:tag).uniq.sort
+      end
     end
 
   end

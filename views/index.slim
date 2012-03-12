@@ -1,7 +1,7 @@
 div#yearSelection
   label{for="yearSelect"} Select a different year 
   select#yearSelect
-    - Mascot.years.reverse.each do |year|
+    - Year.all.reverse.each do |year|
       option{value=year selected=(@year == year)} #{year}
 
 a.howRank Rank your mascots
@@ -34,7 +34,7 @@ p
 
 ' Show only:
 ul#tags
-  - Mascot.tags.each do |tag|
+  - Mascot.tags[@year].each do |tag|
     li.tag
       label
         input{type='checkbox' data-name=tag}

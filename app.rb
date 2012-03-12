@@ -1,5 +1,4 @@
-require './support'
-require './mascot'
+require './init'
 require 'slim'
 require 'sass'
 
@@ -9,7 +8,7 @@ get '/stylesheet.css' do
 end
 
 get '/:year?' do
-  @year = (params[:year] || Mascot.latest_year).to_i
+  @year = (params[:year] || Year.latest).to_i
   @mascots = Mascot.all.fetch(@year, []).shuffle
   if @mascots.empty?
     slim :no_mascots

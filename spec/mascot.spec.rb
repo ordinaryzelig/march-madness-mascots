@@ -10,13 +10,9 @@ describe Mascot do
   end
 
   it '.tags returns array of unique tags' do
-    tags = Mascot.tags
+    tags = Mascot.tags[2011]
     tags.wont_be_empty
     tags.size.must_equal tags.uniq.size
-  end
-
-  it '.latest_year returns most current year' do
-    Mascot.latest_year.must_equal 2012
   end
 
 end
