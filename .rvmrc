@@ -1,1 +1,1 @@
-rvm use ruby-1.9.2-p0@mascots
+rvm --create ruby-1.9.2-p320@mascots
