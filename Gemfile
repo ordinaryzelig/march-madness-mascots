@@ -1,9 +1,10 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'sinatra', '1.3.2'
+gem 'rake'
 
 gem 'orm_from_csv', '0.1.0' # To import mascots.
-gem 'sass', '3.1.0.alpha.249'
+gem 'sass', '3.2.14'
 gem 'slim', '1.1.1'
 
 group :development do
