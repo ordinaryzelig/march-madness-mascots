@@ -23,7 +23,7 @@ Harvard,Crimson,human
 Michigan State,Spartans,human
 Delaware,Fighting Blue Hens,bird
 North Carolina,Tarheels,horned
-Providence,Friar Boys,human
+Providence,Friar Boys,evil
 Iowa State,Cyclones,bird
 North Carolina Central,Eagles,bird
 Connecticut,Huskies,dog
@@ -33,7 +33,7 @@ Milwaukee,Panthers,cat
 Arizona,Wildcats,cat
 Weber State,Wildcats,cat
 Gonzaga,Bulldogs,dog
-Oklahoma St.,Cowboys,human
+Oklahoma St.,Cowboys,evil
 Oklahoma,Sooners,horse
 North Dakota State,Bison,horned
 San Diego State,Aztecs,human
@@ -53,10 +53,10 @@ Saint Louis,Billikens,???
 Louisville,Cardinals,bird
 Manhattan,Jaspers,other
 UMass,Minutemen,human
-Duke,Blue Devils,human
+Duke,Blue Devils,evil
 Mercer,Bears,bear
 Texas,Longhorns,horned
-Arizona State,Sun Devils,human
+Arizona State,Sun Devils,evil
 Michigan,Wolverines,other
 Wofford,Terriers,dog
 Iowa,Hawkeyes,bird
