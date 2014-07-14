@@ -9,10 +9,5 @@ end
 
 get '/:year?' do
   @year = (params[:year] || Year.latest).to_i
-  @mascots = Mascot.all.fetch(@year, []).shuffle
-  if @mascots.empty?
-    slim :no_mascots
-  else
-    slim :index
-  end
+  slim :index
 end

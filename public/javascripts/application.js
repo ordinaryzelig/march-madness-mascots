@@ -1,7 +1,7 @@
 
 $(function() {
   var section, toggleInstructionsOnClick, _i, _len, _ref;
-  $('.mascot').click(function() {
+  $('.mascot').on('click', function() {
     var mascot;
     mascot = $(this);
     if (!mascot.hasClass('ranked')) {
@@ -12,14 +12,6 @@ $(function() {
     }
   });
   $('#search').quicksearch('#mascots li');
-  $('.tooltipHover').tooltip({
-    effect: 'slide'
-  }).dynamic({
-    bottom: {
-      direction: 'down',
-      bounce: true
-    }
-  });
   $('#tags input').click(function() {
     var checkbox, checked, mascots, tags;
     mascots = $('.mascot');

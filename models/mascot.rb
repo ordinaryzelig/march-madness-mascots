@@ -1,4 +1,5 @@
 require 'csv'
+require 'json'
 
 class Mascot < Struct.new(:school, :name, :tag)
 
@@ -22,10 +23,21 @@ class Mascot < Struct.new(:school, :name, :tag)
       end
     end
 
+    def compile_all!
+      all_as_attributes = all.each_with_object({}) do |(year, mascots), hash|
+        hash[year] = mascots.map(&:attributes)
+      end
+      json = JSON.pretty_generate(all_as_attributes)
+      File.open("./public/javascripts/data.json", 'w') { |f| f.write json }
+    end
+
   end
 
-  def initialize(atts = {})
-    atts.each do |field, value|
+  attr_reader :attributes
+
+  def initialize(attributes = {})
+    @attributes = attributes
+    @attributes.each do |field, value|
       send("#{field}=", value)
     end
   end

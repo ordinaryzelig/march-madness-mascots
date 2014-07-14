@@ -2,7 +2,7 @@ $ ->
 
   # ==========================================================
   # Click a mascot, remove it from the list, add it to the ranks.
-  $('.mascot').click ->
+  $('.mascot').on 'click', ->
     mascot = $(@)
     if !mascot.hasClass('ranked')
       mascot.fadeOut ->
@@ -15,7 +15,7 @@ $ ->
 
   # ==========================================================
   # Hover over image, show enlarged image in tooltip.
-  $('.tooltipHover').tooltip(effect: 'slide').dynamic(bottom: {direction: 'down', bounce: true})
+  #$('.tooltipHover').tooltip(effect: 'slide').dynamic(bottom: {direction: 'down', bounce: true})
 
   # ==========================================================
   # Filter checkboxes.

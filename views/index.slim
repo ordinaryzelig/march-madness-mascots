@@ -40,13 +40,12 @@ ul#tags
         input{type='checkbox' data-name=tag}
         = tag
 
-ul#mascots
-  - @mascots.each_with_index do |mascot, i|
-    li.mascot{data-school=mascot.school data-name=mascot.name class=mascot.tag}
-      img.tooltipHover{src=mascot.image_url height=100 width=100}
-      img.tooltip{src=mascot.image_url}
-      .school= mascot.school
-      .name= mascot.name
+ul#mascots{ng-controller='MascotsCtrl'}
+  li.mascot{ng-repeat="mascot in mascots" data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
+    img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
+    img.tooltip{ng-src="{{mascot.image_url}}"}
+    .school {{mascot.school}}
+    .name {{mascot.name}}
 
 h1 Ranks
 
