@@ -26,8 +26,8 @@ this.Mascot = (function() {
 
 })();
 
-window.MascotsCtrl = function($scope, $http) {
-  var loadYear;
+window.MascotsCtrl = function($scope, $http, $location) {
+  var defaultYear, loadYear, years;
   $http({
     url: 'javascripts/data.json'
   }).success(function(data) {
@@ -39,15 +39,20 @@ window.MascotsCtrl = function($scope, $http) {
       });
       return $scope.data[year] = mascots;
     });
+    $scope.yearOptions = _(years()).reverse();
     return loadYear();
   });
   $scope.changeYear = function() {
     return loadYear();
   };
-  return loadYear = function() {
-    var years;
-    years = Object.keys($scope.data);
-    if ($scope.year == null) $scope.year = _(years).last();
+  loadYear = function() {
+    if ($scope.year == null) $scope.year = defaultYear();
     return $scope.mascots = $scope.data[$scope.year];
+  };
+  defaultYear = function() {
+    return _(years()).last();
+  };
+  return years = function() {
+    return Object.keys($scope.data);
   };
 };

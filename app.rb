@@ -7,7 +7,6 @@ get '/stylesheet.css' do
   sass :site
 end
 
-get '/:year?' do
-  @year = (params[:year] || Year.latest).to_i
+get '/*' do
   slim :index
 end

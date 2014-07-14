@@ -2,9 +2,7 @@ div{ng-controller='MascotsCtrl'}
 
   div#yearSelection
     label{for="yearSelect"} Select a different year 
-    select#yearSelect{ng-change='changeYear()' ng-model='year'}
-      - Year.all.reverse.each do |year|
-        option{value=year selected=(@year == year)} #{year}
+    select#yearSelect{ng-change='changeYear()' ng-model='year' ng-options='year for year in yearOptions'}
 
   a.howRank Rank your mascots
   br
@@ -36,7 +34,7 @@ div{ng-controller='MascotsCtrl'}
 
   ' Show only:
   ul#tags
-    - Mascot.tags[@year].each do |tag|
+    - Mascot.tags[2014].each do |tag|
       li.tag
         label
           input{type='checkbox' data-name=tag}

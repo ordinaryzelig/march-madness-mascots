@@ -14,20 +14,32 @@ class @Mascot
       .replace(/['.]/g, '') # Remove apostrophes
       .replace(/[^a-zA-Z0-9]+/g, '_')
 
-window.MascotsCtrl = ($scope, $http) ->
+window.MascotsCtrl = ($scope, $http, $location) ->
+
+  # Load remote data.
   $http(url: 'javascripts/data.json')
     .success (data) ->
+      # Map data as Mascot objects.
       $scope.data = {}
       _(Object.keys(data)).each (year) ->
         mascots = _(data[year]).map (obj) ->
           new Mascot(obj)
         $scope.data[year] = mascots
+
+      # Set options.
+      $scope.yearOptions = _(years()).reverse()
+
       loadYear()
 
   $scope.changeYear = ->
     loadYear()
 
   loadYear = ->
-    years = Object.keys($scope.data)
-    $scope.year = _(years).last() unless $scope.year?
+    $scope.year = defaultYear() unless $scope.year?
     $scope.mascots = $scope.data[$scope.year]
+
+  defaultYear = ->
+    _(years()).last()
+
+  years = ->
+    Object.keys($scope.data)
