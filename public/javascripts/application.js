@@ -1,6 +1,6 @@
 
 $(function() {
-  var section, toggleInstructionsOnClick, _i, _len, _ref;
+  var section, toggleInstructionsOnClick, _i, _len, _ref, _results;
   $('.mascot').on('click', function() {
     var mascot;
     mascot = $(this);
@@ -53,13 +53,10 @@ $(function() {
     });
   };
   _ref = ['howRank', 'howBracket'];
+  _results = [];
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     section = _ref[_i];
-    toggleInstructionsOnClick(section);
+    _results.push(toggleInstructionsOnClick(section));
   }
-  return $('#yearSelect').change(function() {
-    var year;
-    year = $(this).val();
-    return window.location.replace("/" + year);
-  });
+  return _results;
 });

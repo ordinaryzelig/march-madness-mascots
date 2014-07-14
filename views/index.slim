@@ -1,54 +1,56 @@
-div#yearSelection
-  label{for="yearSelect"} Select a different year 
-  select#yearSelect
-    - Year.all.reverse.each do |year|
-      option{value=year selected=(@year == year)} #{year}
+div{ng-controller='MascotsCtrl'}
 
-a.howRank Rank your mascots
-br
+  div#yearSelection
+    label{for="yearSelect"} Select a different year 
+    select#yearSelect{ng-change='changeYear()' ng-model='year'}
+      - Year.all.reverse.each do |year|
+        option{value=year selected=(@year == year)} #{year}
 
-ul.instructions.howRank
-  li Click on your favorite mascot.
-  li It will be moved to the Ranks section at the bottom.
-  li Keep choosing your next favorite mascots until they are all gone.
-  li After ranking all the mascots, fill out your bracket according to rank.
+  a.howRank Rank your mascots
+  br
 
-a.howBracket Then, fill out your bracket
-br
+  ul.instructions.howRank
+    li Click on your favorite mascot.
+    li It will be moved to the Ranks section at the bottom.
+    li Keep choosing your next favorite mascots until they are all gone.
+    li After ranking all the mascots, fill out your bracket according to rank.
 
-ul.instructions.howBracket
-  li After ranking all the mascots, take the mascot at the top of the ranks.
-  li Find their team on your bracket.
-  li For their next game, if the space is empty, fill it with this team.
-  li
-    | Continue to do this for each of their next games until either:
-    ul
-      li there is no empty space (another team is already there), or
-      li the team wins the national championship.
-  li Once a team goes as far as they can, take the next team from the top of the ranks and repeat.
-  li Keep doing this until your entire bracket is filled out.
+  a.howBracket Then, fill out your bracket
+  br
 
-p
-  label{for='search'} Search: 
-  input#search.quicksearch{type='text' autofocus='' placeholder='Team or Mascot'}
+  ul.instructions.howBracket
+    li After ranking all the mascots, take the mascot at the top of the ranks.
+    li Find their team on your bracket.
+    li For their next game, if the space is empty, fill it with this team.
+    li
+      | Continue to do this for each of their next games until either:
+      ul
+        li there is no empty space (another team is already there), or
+        li the team wins the national championship.
+    li Once a team goes as far as they can, take the next team from the top of the ranks and repeat.
+    li Keep doing this until your entire bracket is filled out.
 
-' Show only:
-ul#tags
-  - Mascot.tags[@year].each do |tag|
-    li.tag
-      label
-        input{type='checkbox' data-name=tag}
-        = tag
+  p
+    label{for='search'} Search: 
+    input#search.quicksearch{type='text' autofocus='' placeholder='Team or Mascot'}
 
-ul#mascots{ng-controller='MascotsCtrl'}
-  li.mascot{ng-repeat="mascot in mascots" data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
-    img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
-    img.tooltip{ng-src="{{mascot.image_url}}"}
-    .school {{mascot.school}}
-    .name {{mascot.name}}
+  ' Show only:
+  ul#tags
+    - Mascot.tags[@year].each do |tag|
+      li.tag
+        label
+          input{type='checkbox' data-name=tag}
+          = tag
 
-h1 Ranks
+  ul#mascots
+    li.mascot{ng-repeat="mascot in mascots" data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
+      img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
+      img.tooltip{ng-src="{{mascot.image_url}}"}
+      .school {{mascot.school}}
+      .name {{mascot.name}}
 
-p Save these so you don't lose them.
+  h1 Ranks
 
-ol#ranks
+  p Save these so you don't lose them.
+
+  ol#ranks

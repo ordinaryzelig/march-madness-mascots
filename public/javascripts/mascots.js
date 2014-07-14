@@ -19,7 +19,7 @@ this.Mascot = (function() {
   };
 
   underscore = function(str) {
-    return str.replace("'", '').replace(/[^a-zA-Z]+/g, '_');
+    return str.replace(/['.]/g, '').replace(/[^a-zA-Z0-9]+/g, '_');
   };
 
   return Mascot;
@@ -27,11 +27,27 @@ this.Mascot = (function() {
 })();
 
 window.MascotsCtrl = function($scope, $http) {
-  return $http({
+  var loadYear;
+  $http({
     url: 'javascripts/data.json'
   }).success(function(data) {
-    return $scope.mascots = _(data['2014']).map(function(obj) {
-      return new Mascot(obj);
+    $scope.data = {};
+    _(Object.keys(data)).each(function(year) {
+      var mascots;
+      mascots = _(data[year]).map(function(obj) {
+        return new Mascot(obj);
+      });
+      return $scope.data[year] = mascots;
     });
+    return loadYear();
   });
+  $scope.changeYear = function() {
+    return loadYear();
+  };
+  return loadYear = function() {
+    var years;
+    years = Object.keys($scope.data);
+    if ($scope.year == null) $scope.year = _(years).last();
+    return $scope.mascots = $scope.data[$scope.year];
+  };
 };

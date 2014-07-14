@@ -49,10 +49,3 @@ $ ->
 
   for section in ['howRank', 'howBracket']
     toggleInstructionsOnClick(section)
-
-  # ==========================================================
-  # Year select.
-
-  $('#yearSelect').change ->
-    year = $(@).val()
-    window.location.replace("/#{year}")

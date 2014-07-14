@@ -11,11 +11,23 @@ class @Mascot
 
   underscore = (str) ->
     str
-      .replace("'", '') # Remove apostrophes
-      .replace(/[^a-zA-Z]+/g, '_')
+      .replace(/['.]/g, '') # Remove apostrophes
+      .replace(/[^a-zA-Z0-9]+/g, '_')
 
 window.MascotsCtrl = ($scope, $http) ->
   $http(url: 'javascripts/data.json')
     .success (data) ->
-      $scope.mascots = _(data['2014']).map (obj) ->
-        new Mascot(obj)
+      $scope.data = {}
+      _(Object.keys(data)).each (year) ->
+        mascots = _(data[year]).map (obj) ->
+          new Mascot(obj)
+        $scope.data[year] = mascots
+      loadYear()
+
+  $scope.changeYear = ->
+    loadYear()
+
+  loadYear = ->
+    years = Object.keys($scope.data)
+    $scope.year = _(years).last() unless $scope.year?
+    $scope.mascots = $scope.data[$scope.year]
