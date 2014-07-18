@@ -34,14 +34,13 @@ div{ng-controller='MascotsCtrl'}
 
   ' Show only:
   ul#tags
-    - Mascot.tags[2014].each do |tag|
-      li.tag
-        label
-          input{type='checkbox' data-name=tag}
-          = tag
+    li.tag{ng-repeat='(tag, checked) in tags'}
+      label
+        input{type='checkbox' ng-model='tags[tag]'}
+        = '{{tag}}'
 
   ul#mascots
-    li.mascot{ng-repeat="mascot in mascots" data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
+    li.mascot{ng-repeat="mascot in mascots" ng-hide='willHide(mascot.tag)' data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
       img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
       img.tooltip{ng-src="{{mascot.image_url}}"}
       .school {{mascot.school}}

@@ -27,7 +27,7 @@ this.Mascot = (function() {
 })();
 
 window.MascotsCtrl = function($scope, $http, $location) {
-  var defaultYear, loadYear, years;
+  var checkedTags, defaultYear, loadYear, tags, years;
   $http({
     url: 'javascripts/data.json'
   }).success(function(data) {
@@ -39,20 +39,42 @@ window.MascotsCtrl = function($scope, $http, $location) {
       });
       return $scope.data[year] = mascots;
     });
+    window.data = $scope.data;
+    if ($scope.year == null) $scope.year = defaultYear();
     $scope.yearOptions = _(years()).reverse();
     return loadYear();
   });
   $scope.changeYear = function() {
     return loadYear();
   };
+  $scope.willHide = function(tag) {
+    var checked, noneChecked, tagChecked;
+    checked = checkedTags();
+    noneChecked = checked.length === 0;
+    if (noneChecked) return false;
+    tagChecked = _(checked).indexOf(tag) !== -1;
+    return !tagChecked;
+  };
   loadYear = function() {
-    if ($scope.year == null) $scope.year = defaultYear();
-    return $scope.mascots = $scope.data[$scope.year];
+    $scope.mascots = $scope.data[$scope.year];
+    return $scope.tags = tags();
   };
   defaultYear = function() {
     return _(years()).last();
   };
-  return years = function() {
+  years = function() {
     return Object.keys($scope.data);
+  };
+  tags = function() {
+    return window.tags = _($scope.data[$scope.year]).reduce((function(hash, mascot) {
+      hash[mascot.tag] = false;
+      return hash;
+    }), {});
+  };
+  return checkedTags = function() {
+    return _($scope.tags).reduce((function(array, checked, tag) {
+      if (checked) array.push(tag);
+      return array;
+    }), []);
   };
 };

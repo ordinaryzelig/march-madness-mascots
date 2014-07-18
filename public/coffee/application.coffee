@@ -18,30 +18,6 @@ $ ->
   #$('.tooltipHover').tooltip(effect: 'slide').dynamic(bottom: {direction: 'down', bounce: true})
 
   # ==========================================================
-  # Filter checkboxes.
-  # When clicked, show only mascots with matching tag.
-  $('#tags input').click ->
-    mascots = $('.mascot')
-    checked = $('#tags input:checked')
-    # If there are any checked tags, loop through mascots, show if mascot has class matching any checked tag.
-    if checked.length
-      tags = ($(checkbox).data('name') for checkbox in checked)
-      mascots.each ->
-        mascot = $(@)
-        hasTag = false
-        for tag in tags
-          if mascot.hasClass(tag)
-            hasTag = true
-            break
-        if hasTag
-           mascot.show()
-        else
-          mascot.hide()
-    else
-      # Nothing checked, show all.
-      mascots.show()
-
-  # ==========================================================
   # Toggle instructions.
 
   toggleInstructionsOnClick = (section) ->

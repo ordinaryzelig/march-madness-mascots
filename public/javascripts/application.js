@@ -12,41 +12,6 @@ $(function() {
     }
   });
   $('#search').quicksearch('#mascots li');
-  $('#tags input').click(function() {
-    var checkbox, checked, mascots, tags;
-    mascots = $('.mascot');
-    checked = $('#tags input:checked');
-    if (checked.length) {
-      tags = (function() {
-        var _i, _len, _results;
-        _results = [];
-        for (_i = 0, _len = checked.length; _i < _len; _i++) {
-          checkbox = checked[_i];
-          _results.push($(checkbox).data('name'));
-        }
-        return _results;
-      })();
-      return mascots.each(function() {
-        var hasTag, mascot, tag, _i, _len;
-        mascot = $(this);
-        hasTag = false;
-        for (_i = 0, _len = tags.length; _i < _len; _i++) {
-          tag = tags[_i];
-          if (mascot.hasClass(tag)) {
-            hasTag = true;
-            break;
-          }
-        }
-        if (hasTag) {
-          return mascot.show();
-        } else {
-          return mascot.hide();
-        }
-      });
-    } else {
-      return mascots.show();
-    }
-  });
   toggleInstructionsOnClick = function(section) {
     return $("a." + section).click(function() {
       return $("ul." + section).slideToggle();
