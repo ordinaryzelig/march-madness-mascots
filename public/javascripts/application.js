@@ -11,7 +11,6 @@ $(function() {
       return $('#ranks').append("<li>" + (mascot.data('school')) + " " + (mascot.data('name')) + "</li>");
     }
   });
-  $('#search').quicksearch('#mascots li');
   toggleInstructionsOnClick = function(section) {
     return $("a." + section).click(function() {
       return $("ul." + section).slideToggle();

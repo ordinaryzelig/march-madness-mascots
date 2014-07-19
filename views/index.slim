@@ -30,7 +30,7 @@ div{ng-controller='MascotsCtrl'}
 
   p
     label{for='search'} Search: 
-    input#search.quicksearch{type='text' autofocus='' placeholder='Team or Mascot'}
+    input#search{type='text' autofocus='' placeholder='Team or Mascot' ng-model='filterText'}
 
   ' Show only:
   ul#tags
@@ -40,7 +40,7 @@ div{ng-controller='MascotsCtrl'}
         = '{{tag}}'
 
   ul#mascots
-    li.mascot{ng-repeat="mascot in mascots" ng-hide='willHide(mascot.tag)' data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
+    li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
       img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
       img.tooltip{ng-src="{{mascot.image_url}}"}
       .school {{mascot.school}}

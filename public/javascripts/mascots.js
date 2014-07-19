@@ -1,6 +1,5 @@
 
 this.Mascot = (function() {
-  var underscore;
 
   function Mascot(obj) {
     var attr, _i, _len, _ref;
@@ -14,12 +13,21 @@ this.Mascot = (function() {
 
   Mascot.prototype.generateImage = function() {
     var fileBase;
-    fileBase = underscore("" + this.school + "_" + this.name).toLowerCase();
+    fileBase = this.underscore("" + this.school + "_" + this.name).toLowerCase();
     return "images/mascots/" + fileBase + ".png";
   };
 
-  underscore = function(str) {
+  Mascot.prototype.underscore = function(str) {
     return str.replace(/['.]/g, '').replace(/[^a-zA-Z0-9]+/g, '_');
+  };
+
+  Mascot.prototype.matches = function(str) {
+    var _this = this;
+    return _(['school', 'name']).any(function(attr) {
+      var regex;
+      regex = new RegExp(str, 'i');
+      return regex.test(_this[attr]);
+    });
   };
 
   return Mascot;
@@ -27,7 +35,7 @@ this.Mascot = (function() {
 })();
 
 window.MascotsCtrl = function($scope, $http, $location) {
-  var checkedTags, defaultYear, loadYear, tags, years;
+  var checkedTags, defaultYear, includedByTag, includedByText, loadYear, tags, years;
   $http({
     url: 'javascripts/data.json'
   }).success(function(data) {
@@ -47,16 +55,25 @@ window.MascotsCtrl = function($scope, $http, $location) {
   $scope.changeYear = function() {
     return loadYear();
   };
-  $scope.willHide = function(tag) {
-    var checked, noneChecked, tagChecked;
+  $scope.willShow = function(mascot) {
+    return includedByTag(mascot.tag) && includedByText(mascot);
+  };
+  includedByTag = function(tag) {
+    var checked, noneChecked, tagIsChecked;
     checked = checkedTags();
     noneChecked = checked.length === 0;
-    if (noneChecked) return false;
-    tagChecked = _(checked).indexOf(tag) !== -1;
-    return !tagChecked;
+    if (noneChecked) return true;
+    return tagIsChecked = _(checked).include(tag);
+  };
+  includedByText = function(mascot) {
+    var textExists;
+    textExists = ($scope.filterText != null) && $scope.filterText !== '';
+    if (!textExists) return true;
+    return mascot.matches($scope.filterText);
   };
   loadYear = function() {
     $scope.mascots = $scope.data[$scope.year];
+    window.mascots = $scope.mascots;
     return $scope.tags = tags();
   };
   defaultYear = function() {

@@ -6,13 +6,18 @@ class @Mascot
     @['image_url'] = @generateImage()
 
   generateImage: ->
-    fileBase = underscore("#{@school}_#{@name}").toLowerCase()
+    fileBase = @underscore("#{@school}_#{@name}").toLowerCase()
     "images/mascots/#{fileBase}.png"
 
-  underscore = (str) ->
+  underscore: (str) ->
     str
       .replace(/['.]/g, '')
       .replace(/[^a-zA-Z0-9]+/g, '_')
+
+  matches: (str) ->
+    _(['school', 'name']).any (attr) =>
+      regex = new RegExp(str, 'i')
+      regex.test(@[attr])
 
 window.MascotsCtrl = ($scope, $http, $location) ->
 
@@ -35,15 +40,23 @@ window.MascotsCtrl = ($scope, $http, $location) ->
   $scope.changeYear = ->
     loadYear()
 
-  $scope.willHide = (tag) ->
+  $scope.willShow = (mascot) ->
+    includedByTag(mascot.tag) and includedByText(mascot)
+
+  includedByTag = (tag) ->
     checked = checkedTags()
     noneChecked = checked.length == 0
-    return false if noneChecked
-    tagChecked = _(checked).indexOf(tag) != -1
-    !tagChecked
+    return true if noneChecked
+    tagIsChecked = _(checked).include(tag)
+
+  includedByText = (mascot) ->
+    textExists = $scope.filterText? and $scope.filterText != ''
+    return true unless textExists
+    mascot.matches($scope.filterText)
 
   loadYear = ->
     $scope.mascots = $scope.data[$scope.year]
+    window.mascots = $scope.mascots
     $scope.tags    = tags()
 
   defaultYear = ->
