@@ -40,7 +40,7 @@ div{ng-controller='MascotsCtrl'}
         = '{{tag}}'
 
   ul#mascots
-    li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' ng-hover='hover(mascot)' tooltip-html-unsafe='{{tooltip(mascot)}}'}
+    li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' ng-click='pick(mascot)' ng-hover='hover(mascot)' tooltip-html-unsafe='{{tooltip(mascot)}}'}
       img{ng-src="{{mascot.imageUrl}}" height=100 width=100}
       .school {{mascot.school}}
       .name {{mascot.name}}
@@ -50,4 +50,5 @@ div{ng-controller='MascotsCtrl'}
   p Save these so you don't lose them.
 
   ol#ranks
+    li{ng-repeat='mascot in ranks'} {{mascot.school}} {{mascot.name}}
 

@@ -47,6 +47,18 @@ window.MascotsCtrl = ($scope, $http) ->
   $scope.tooltip = (mascot) ->
     '<img src="' + mascot.imageUrl + '">'
 
+  $scope.pick = (mascot) ->
+    remove(mascot)
+    rank(mascot)
+
+  remove = (mascot) ->
+    index = $scope.mascots.indexOf(mascot)
+    $scope.mascots.splice(index, 1)
+
+  rank = (mascot) ->
+    $scope.ranks.push mascot
+
+  # Toggle instructions
   $scope.rankingInstructionsCollapsed = true
   $scope.bracketInstructionsCollapsed = true
   $scope.toggleCollapse = (section) ->
@@ -67,6 +79,7 @@ window.MascotsCtrl = ($scope, $http) ->
     $scope.mascots = $scope.data[$scope.year]
     window.mascots = $scope.mascots
     $scope.tags    = tags()
+    $scope.ranks   = []
 
   defaultYear = ->
     _(years()).last()

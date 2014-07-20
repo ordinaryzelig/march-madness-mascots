@@ -37,7 +37,7 @@ this.Mascot = (function() {
 angular.module('sure', ['ui.bootstrap']);
 
 window.MascotsCtrl = function($scope, $http) {
-  var checkedTags, defaultYear, includedByTag, includedByText, loadYear, tags, years;
+  var checkedTags, defaultYear, includedByTag, includedByText, loadYear, rank, remove, tags, years;
   $http({
     url: 'javascripts/data.json'
   }).success(function(data) {
@@ -63,6 +63,18 @@ window.MascotsCtrl = function($scope, $http) {
   $scope.tooltip = function(mascot) {
     return '<img src="' + mascot.imageUrl + '">';
   };
+  $scope.pick = function(mascot) {
+    remove(mascot);
+    return rank(mascot);
+  };
+  remove = function(mascot) {
+    var index;
+    index = $scope.mascots.indexOf(mascot);
+    return $scope.mascots.splice(index, 1);
+  };
+  rank = function(mascot) {
+    return $scope.ranks.push(mascot);
+  };
   $scope.rankingInstructionsCollapsed = true;
   $scope.bracketInstructionsCollapsed = true;
   $scope.toggleCollapse = function(section) {
@@ -84,7 +96,8 @@ window.MascotsCtrl = function($scope, $http) {
   loadYear = function() {
     $scope.mascots = $scope.data[$scope.year];
     window.mascots = $scope.mascots;
-    return $scope.tags = tags();
+    $scope.tags = tags();
+    return $scope.ranks = [];
   };
   defaultYear = function() {
     return _(years()).last();
