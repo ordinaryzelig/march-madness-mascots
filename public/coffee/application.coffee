@@ -8,12 +8,3 @@
       #mascot.fadeOut ->
         #mascot.remove()
       #$('#ranks').append("<li>#{mascot.data('school')} #{mascot.data('name')}</li>")
-
-  ## ==========================================================
-  ## Toggle instructions.
-
-  #toggleInstructionsOnClick = (section) ->
-    #$("a.#{section}").click -> $("ul.#{section}").slideToggle()
-
-  #for section in ['howRank', 'howBracket']
-    #toggleInstructionsOnClick(section)

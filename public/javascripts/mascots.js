@@ -63,6 +63,11 @@ window.MascotsCtrl = function($scope, $http) {
   $scope.tooltip = function(mascot) {
     return '<img src="' + mascot.imageUrl + '">';
   };
+  $scope.rankingInstructionsCollapsed = true;
+  $scope.bracketInstructionsCollapsed = true;
+  $scope.toggleCollapse = function(section) {
+    return $scope["" + section + "Collapsed"] = !$scope["" + section + "Collapsed"];
+  };
   includedByTag = function(tag) {
     var checked, noneChecked, tagIsChecked;
     checked = checkedTags();

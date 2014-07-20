@@ -47,6 +47,11 @@ window.MascotsCtrl = ($scope, $http) ->
   $scope.tooltip = (mascot) ->
     '<img src="' + mascot.imageUrl + '">'
 
+  $scope.rankingInstructionsCollapsed = true
+  $scope.bracketInstructionsCollapsed = true
+  $scope.toggleCollapse = (section) ->
+    $scope["#{section}Collapsed"] = !$scope["#{section}Collapsed"]
+
   includedByTag = (tag) ->
     checked = checkedTags()
     noneChecked = checked.length == 0
