@@ -1247,7 +1247,7 @@ window.data = {
       "tag": "bird"
     },
     {
-      "school": "Brigham Young",
+      "school": "BYU",
       "name": "Cougars",
       "tag": "cat"
     },
