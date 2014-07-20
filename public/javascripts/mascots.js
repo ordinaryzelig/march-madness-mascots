@@ -8,7 +8,7 @@ this.Mascot = (function() {
       attr = _ref[_i];
       this[attr] = obj[attr];
     }
-    this['image_url'] = this.generateImage();
+    this['imageUrl'] = this.generateImage();
   }
 
   Mascot.prototype.generateImage = function() {
@@ -34,7 +34,9 @@ this.Mascot = (function() {
 
 })();
 
-window.MascotsCtrl = function($scope, $http, $location) {
+angular.module('sure', ['ui.bootstrap']);
+
+window.MascotsCtrl = function($scope, $http) {
   var checkedTags, defaultYear, includedByTag, includedByText, loadYear, tags, years;
   $http({
     url: 'javascripts/data.json'
@@ -57,6 +59,9 @@ window.MascotsCtrl = function($scope, $http, $location) {
   };
   $scope.willShow = function(mascot) {
     return includedByTag(mascot.tag) && includedByText(mascot);
+  };
+  $scope.tooltip = function(mascot) {
+    return '<img src="' + mascot.imageUrl + '">';
   };
   includedByTag = function(tag) {
     var checked, noneChecked, tagIsChecked;

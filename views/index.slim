@@ -1,5 +1,7 @@
 div{ng-controller='MascotsCtrl'}
 
+  a{href="#" tooltip='yes'} yes
+
   div#yearSelection
     label{for="yearSelect"} Select a different year 
     select#yearSelect{ng-change='changeYear()' ng-model='year' ng-options='year for year in yearOptions'}
@@ -40,9 +42,8 @@ div{ng-controller='MascotsCtrl'}
         = '{{tag}}'
 
   ul#mascots
-    li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' data-school="{{mascot.school}}" data-name="{{mascot.name}}" class="{{mascot.tag}}"}
-      img.tooltipHover{ng-src="{{mascot.image_url}}" height=100 width=100}
-      img.tooltip{ng-src="{{mascot.image_url}}"}
+    li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' ng-hover='hover(mascot)' tooltip-html-unsafe='{{tooltip(mascot)}}'}
+      img{ng-src="{{mascot.imageUrl}}" height=100 width=100}
       .school {{mascot.school}}
       .name {{mascot.name}}
 

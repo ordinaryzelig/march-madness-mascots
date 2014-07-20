@@ -3,7 +3,7 @@ class @Mascot
   constructor: (obj) ->
     for attr in ['school', 'name', 'tag']
       @[attr] = obj[attr]
-    @['image_url'] = @generateImage()
+    @['imageUrl'] = @generateImage()
 
   generateImage: ->
     fileBase = @underscore("#{@school}_#{@name}").toLowerCase()
@@ -19,7 +19,8 @@ class @Mascot
       regex = new RegExp(str, 'i')
       regex.test(@[attr])
 
-window.MascotsCtrl = ($scope, $http, $location) ->
+angular.module('sure', ['ui.bootstrap'])
+window.MascotsCtrl = ($scope, $http) ->
 
   # Load remote data.
   $http(url: 'javascripts/data.json')
@@ -42,6 +43,9 @@ window.MascotsCtrl = ($scope, $http, $location) ->
 
   $scope.willShow = (mascot) ->
     includedByTag(mascot.tag) and includedByText(mascot)
+
+  $scope.tooltip = (mascot) ->
+    '<img src="' + mascot.imageUrl + '">'
 
   includedByTag = (tag) ->
     checked = checkedTags()

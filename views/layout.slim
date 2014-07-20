@@ -1,13 +1,19 @@
 doctype 5
-html[lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' ng-app='']
+html[lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' ng-app='sure']
   head
     title March Madness Mascots
-    script[src='javascripts/jquery-1.11.1.min.js']
+
     script[src='javascripts/angular.min.js']
     script[src='javascripts/underscore-min.js']
+
+    script[src='bootstrap/ui-bootstrap-tpls-0.11.0.min.js']
+    link[href='bootstrap/bootstrap.css' media='screen' rel='stylesheet' type='text/css']
+
+    link[href='stylesheet.css' media='screen' rel='stylesheet' type='text/css']
+
     script[src='javascripts/application.js']
     script[src='javascripts/mascots.js']
-    link[href='stylesheet.css' media='screen' rel='stylesheet' type='text/css']
+
   body
 
     h1 March Madness Mascots #{@year}
