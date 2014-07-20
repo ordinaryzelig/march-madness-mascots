@@ -1,8 +1,8 @@
 guard 'coffeescript', {
-  :output => 'public/javascripts',
+  :output => 'assets/javascripts',
   :bare   => true
 } do
-  watch %r{public/coffee/(.+\.coffee)}
+  watch %r{assets/coffeescripts/(.+\.coffee)}
 end
 
 guard 'slim', {

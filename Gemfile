@@ -9,5 +9,5 @@ gem 'guard-slim'
 
 group :development do
   gem 'growl', '1.0.3'
-  gem 'guard-coffeescript', '0.5.4'
+  gem 'guard-coffeescript'
 end

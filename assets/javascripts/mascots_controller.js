@@ -1,39 +1,3 @@
-
-this.Mascot = (function() {
-
-  function Mascot(obj) {
-    var attr, _i, _len, _ref;
-    _ref = ['school', 'name', 'tag'];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      attr = _ref[_i];
-      this[attr] = obj[attr];
-    }
-    this['imageUrl'] = this.generateImage();
-  }
-
-  Mascot.prototype.generateImage = function() {
-    var fileBase;
-    fileBase = this.underscore("" + this.school + "_" + this.name).toLowerCase();
-    return "public/images/mascots/" + fileBase + ".png";
-  };
-
-  Mascot.prototype.underscore = function(str) {
-    return str.replace(/['.]/g, '').replace(/[^a-zA-Z0-9]+/g, '_');
-  };
-
-  Mascot.prototype.matches = function(str) {
-    var _this = this;
-    return _(['school', 'name']).any(function(attr) {
-      var regex;
-      regex = new RegExp(str, 'i');
-      return regex.test(_this[attr]);
-    });
-  };
-
-  return Mascot;
-
-})();
-
 angular.module('sure', ['ui.bootstrap']);
 
 window.MascotsCtrl = function($scope) {
@@ -50,7 +14,9 @@ window.MascotsCtrl = function($scope) {
   };
   init = function() {
     loadData();
-    if ($scope.year == null) $scope.year = defaultYear();
+    if ($scope.year == null) {
+      $scope.year = defaultYear();
+    }
     $scope.yearOptions = _(years()).reverse();
     return loadYear();
   };
@@ -84,13 +50,17 @@ window.MascotsCtrl = function($scope) {
     var checked, noneChecked, tagIsChecked;
     checked = checkedTags();
     noneChecked = checked.length === 0;
-    if (noneChecked) return true;
+    if (noneChecked) {
+      return true;
+    }
     return tagIsChecked = _(checked).include(tag);
   };
   includedByText = function(mascot) {
     var textExists;
     textExists = ($scope.filterText != null) && $scope.filterText !== '';
-    if (!textExists) return true;
+    if (!textExists) {
+      return true;
+    }
     return mascot.matches($scope.filterText);
   };
   loadYear = function() {
@@ -113,7 +83,9 @@ window.MascotsCtrl = function($scope) {
   };
   checkedTags = function() {
     return _($scope.tags).reduce((function(array, checked, tag) {
-      if (checked) array.push(tag);
+      if (checked) {
+        array.push(tag);
+      }
       return array;
     }), []);
   };
