@@ -15,14 +15,6 @@ class Mascot < Struct.new(:school, :name, :tag)
       end
     end
 
-    # All unique tags as grouped hash by year.
-    def tags
-      return @tags if @tags
-      @tags = all.each_with_object({}) do |(year, mascots), hash|
-        hash[year] = mascots.map(&:tag).uniq.sort
-      end
-    end
-
     def compile_all!
       all_as_attributes = all.each_with_object({}) do |(year, mascots), hash|
         hash[year] = mascots.map(&:attributes)
@@ -43,10 +35,6 @@ class Mascot < Struct.new(:school, :name, :tag)
     @attributes.each do |field, value|
       send("#{field}=", value)
     end
-  end
-
-  def image_url
-    "images/mascots/#{school.underscore.downcase}_#{name.underscore.downcase}.png"
   end
 
   def <=>(another)

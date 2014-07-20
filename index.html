@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="sure" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>March Madness Mascots</title>
+    <script src="public/javascripts/angular.min.js"></script>
+    <script src="public/javascripts/underscore-min.js"></script>
+    <script src="public/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <link href="public/bootstrap/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="public/javascripts/application.js"></script>
+    <script src="public/javascripts/mascots.js"></script>
+    <script src="public/javascripts/data.js"></script>
+  </head>
+  <body ng-controller="MascotsCtrl">
+    <h1>
+      March Madness Mascots {{year}}
+    </h1>
+    <div>
+      <div id="yearSelection">
+        <label for="yearSelect">Select a different year </label><select id="yearSelect" ng-change="changeYear()" ng-model="year" ng-options="year for year in yearOptions"></select>
+      </div>
+      <a class="howRank" ng-click="toggleCollapse(&#39;rankingInstructions&#39;)">Rank your mascots</a><br />
+      <ul class="instructions howRank" collapse="rankingInstructionsCollapsed">
+        <li>
+          Click on your favorite mascot.
+        </li>
+        <li>
+          It will be moved to the Ranks section at the bottom.
+        </li>
+        <li>
+          Keep choosing your next favorite mascots until they are all gone.
+        </li>
+        <li>
+          After ranking all the mascots, fill out your bracket according to rank.
+        </li>
+      </ul>
+      <a ng-click="toggleCollapse(&#39;bracketInstructions&#39;)">Then, fill out your bracket</a><br />
+      <ul class="instructions" collapse="bracketInstructionsCollapsed">
+        <li>
+          After ranking all the mascots, take the mascot at the top of the ranks.
+        </li>
+        <li>
+          Find their team on your bracket.
+        </li>
+        <li>
+          For their next game, if the space is empty, fill it with this team.
+        </li>
+        <li>
+          Continue to do this for each of their next games until either:
+          <ul>
+            <li>
+              there is no empty space (another team is already there), or
+            </li>
+            <li>
+              the team wins the national championship.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Once a team goes as far as they can, take the next team from the top of the ranks and repeat.
+        </li>
+        <li>
+          Keep doing this until your entire bracket is filled out.
+        </li>
+      </ul>
+      <p>
+        <label for="search">Search: </label><input autofocus="" id="search" ng-model="filterText" placeholder="Team or Mascot" type="text" />
+      </p>
+      Show only: 
+      <ul id="tags">
+        <li class="tag" ng-repeat="(tag, checked) in tags">
+          <label><input ng-model="tags[tag]" type="checkbox" />{{tag}}</label>
+        </li>
+      </ul>
+      <ul id="mascots">
+        <li class="mascot" ng-click="pick(mascot)" ng-hover="hover(mascot)" ng-repeat="mascot in mascots" ng-show="willShow(mascot)" tooltip-html-unsafe="{{tooltip(mascot)}}">
+          <img height="100" ng-src="{{mascot.imageUrl}}" width="100" />
+          <div class="school">
+            {{mascot.school}}
+          </div>
+          <div class="name">
+            {{mascot.name}}
+          </div>
+        </li>
+      </ul>
+      <h1>
+        Ranks
+      </h1>
+      <p>
+        Save these so you don't lose them.
+      </p>
+      <ol id="ranks">
+        <li ng-repeat="mascot in ranks">
+          {{mascot.school}} {{mascot.name}}
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

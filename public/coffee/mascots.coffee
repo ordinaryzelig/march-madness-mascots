@@ -7,7 +7,7 @@ class @Mascot
 
   generateImage: ->
     fileBase = @underscore("#{@school}_#{@name}").toLowerCase()
-    "images/mascots/#{fileBase}.png"
+    "public/images/mascots/#{fileBase}.png"
 
   underscore: (str) ->
     str

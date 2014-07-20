@@ -14,7 +14,7 @@ this.Mascot = (function() {
   Mascot.prototype.generateImage = function() {
     var fileBase;
     fileBase = this.underscore("" + this.school + "_" + this.name).toLowerCase();
-    return "images/mascots/" + fileBase + ".png";
+    return "public/images/mascots/" + fileBase + ".png";
   };
 
   Mascot.prototype.underscore = function(str) {
