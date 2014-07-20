@@ -42,13 +42,13 @@ div{ng-controller='MascotsCtrl'}
   ul#mascots
     li.mascot{ng-repeat="mascot in mascots" ng-show='willShow(mascot)' ng-click='pick(mascot)' ng-hover='hover(mascot)' tooltip-html-unsafe='{{tooltip(mascot)}}'}
       img{ng-src="{{mascot.imageUrl}}" height=100 width=100}
-      .school {{mascot.school}}
-      .name {{mascot.name}}
+      .school= '{{mascot.school}}'
+      .name= '{{mascot.name}}'
 
   h1 Ranks
 
   p Save these so you don't lose them.
 
   ol#ranks
-    li{ng-repeat='mascot in ranks'} {{mascot.school}} {{mascot.name}}
+    li{ng-repeat='mascot in ranks'}= '{{mascot.school}} {{mascot.name}}'
 

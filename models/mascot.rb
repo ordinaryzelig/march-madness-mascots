@@ -28,7 +28,10 @@ class Mascot < Struct.new(:school, :name, :tag)
         hash[year] = mascots.map(&:attributes)
       end
       json = JSON.pretty_generate(all_as_attributes)
-      File.open("./public/javascripts/data.json", 'w') { |f| f.write json }
+      File.open("./public/javascripts/data.js", 'w') do |f|
+        f.write "window.data = "
+        f.write json
+      end
     end
 
   end
@@ -44,6 +47,10 @@ class Mascot < Struct.new(:school, :name, :tag)
 
   def image_url
     "images/mascots/#{school.underscore.downcase}_#{name.underscore.downcase}.png"
+  end
+
+  def <=>(another)
+    school <=> another.school
   end
 
 end

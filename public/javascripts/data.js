@@ -1,4 +1,4 @@
-{
+window.data = {
   "2011": [
     {
       "school": "Akron",

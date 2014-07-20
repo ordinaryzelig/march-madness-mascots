@@ -36,24 +36,24 @@ this.Mascot = (function() {
 
 angular.module('sure', ['ui.bootstrap']);
 
-window.MascotsCtrl = function($scope, $http) {
-  var checkedTags, defaultYear, includedByTag, includedByText, loadYear, rank, remove, tags, years;
-  $http({
-    url: 'javascripts/data.json'
-  }).success(function(data) {
+window.MascotsCtrl = function($scope) {
+  var checkedTags, defaultYear, includedByTag, includedByText, init, loadData, loadYear, rank, remove, tags, years;
+  loadData = function() {
     $scope.data = {};
-    _(Object.keys(data)).each(function(year) {
+    return _(Object.keys(data)).each(function(year) {
       var mascots;
       mascots = _(data[year]).map(function(obj) {
         return new Mascot(obj);
       });
       return $scope.data[year] = mascots;
     });
-    window.data = $scope.data;
+  };
+  init = function() {
+    loadData();
     if ($scope.year == null) $scope.year = defaultYear();
     $scope.yearOptions = _(years()).reverse();
     return loadYear();
-  });
+  };
   $scope.changeYear = function() {
     return loadYear();
   };
@@ -111,10 +111,11 @@ window.MascotsCtrl = function($scope, $http) {
       return hash;
     }), {});
   };
-  return checkedTags = function() {
+  checkedTags = function() {
     return _($scope.tags).reduce((function(array, checked, tag) {
       if (checked) array.push(tag);
       return array;
     }), []);
   };
+  return init();
 };

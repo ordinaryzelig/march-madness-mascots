@@ -13,6 +13,7 @@ end
 
 namespace :mascots do
 
+  desc 'Convert CSVs into runnable JS.'
   task :compile => :init do
     Mascot.compile_all!
   end

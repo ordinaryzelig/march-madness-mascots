@@ -20,23 +20,21 @@ class @Mascot
       regex.test(@[attr])
 
 angular.module('sure', ['ui.bootstrap'])
-window.MascotsCtrl = ($scope, $http) ->
+window.MascotsCtrl = ($scope) ->
 
-  # Load remote data.
-  $http(url: 'javascripts/data.json')
-    .success (data) ->
-      # Map data as Mascot objects.
-      $scope.data = {}
-      _(Object.keys(data)).each (year) ->
-        mascots = _(data[year]).map (obj) ->
-          new Mascot(obj)
-        $scope.data[year] = mascots
-      window.data = $scope.data
+  loadData = ->
+    # Map data as Mascot objects.
+    $scope.data = {}
+    _(Object.keys(data)).each (year) ->
+      mascots = _(data[year]).map (obj) ->
+        new Mascot(obj)
+      $scope.data[year] = mascots
 
-      $scope.year        = defaultYear() unless $scope.year?
-      $scope.yearOptions = _(years()).reverse()
-
-      loadYear()
+  init = ->
+    loadData()
+    $scope.year        = defaultYear() unless $scope.year?
+    $scope.yearOptions = _(years()).reverse()
+    loadYear()
 
   $scope.changeYear = ->
     loadYear()
@@ -104,3 +102,5 @@ window.MascotsCtrl = ($scope, $http) ->
         array
       ), []
     )
+
+  init()
