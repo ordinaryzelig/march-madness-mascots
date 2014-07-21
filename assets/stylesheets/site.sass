@@ -1,47 +1,31 @@
-a
-  color: blue
-  text-decoration: underline
-  cursor: pointer
-  &:visited
-    color: blue
+$ranks_column_width: 20%
 
-body
-  font-family: Helvetica
-  margin: 20px
+#main
+  // not too close to edge
+  $side_padding: 30px
+  padding-left: $side_padding
+  padding-right: $side_padding
+  // Clear navbar
+  padding-top: 100px
 
-#tags
-  width: 300px
-  li
+#mascots
+  // something is adding 40px left
+  padding: 0
+  .mascot
     display: inline-block
-    list-style-type: none
-    width: 80px
-    $margin: 10px
-    margin-left: $margin
-    margin-right: $margin
-    margin-bottom: 5px
-    input
-      margin-right: 5px
+    vertical-align: top
+    padding: 5px
+    margin-bottom: 20px
+    width: 200px
+    &:hover
+      background: #ddd
+      cursor: pointer
 
-.mascot
-  display: inline-block
-  padding: 10px
-  margin: 5px
-  background: lightgray
-  &:hover
-    background: lightblue
-    cursor: pointer
-  .school, .name
-    font-weight: bold
-  img.tooltip
-    display: none
-    outline: gray solid 5px
+.sidebar-fixed
+  position: fixed
+  height: 85%
 
-#yearSelection
-  position: absolute
-  top: 20px
-  right: 20px
-  font-size: 75%
-
-// bootstrap's tooltip has a narrow max width.
-.tooltip-inner
-  max-width: 100%
+#ranks .sidebar-fixed
+  background-color: #eee
+  padding: 5px
+  overflow: scroll

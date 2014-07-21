@@ -13,3 +13,7 @@ guard 'slim', {
 } do
   watch(%r'^.+\.slim$')
 end
+
+guard 'sass', :input => 'sass', :output => 'assets/stylesheets' do
+  watch(%r{assets/stylesheets/(.+\.sass)})
+end

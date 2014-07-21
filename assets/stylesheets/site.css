@@ -1,0 +1,25 @@
+#main {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 100px; }
+
+#mascots {
+  padding: 0; }
+  #mascots .mascot {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 200px; }
+    #mascots .mascot:hover {
+      background: #dddddd;
+      cursor: pointer; }
+
+.sidebar-fixed {
+  position: fixed;
+  height: 85%; }
+
+#ranks .sidebar-fixed {
+  background-color: #eeeeee;
+  padding: 5px;
+  overflow: scroll; }

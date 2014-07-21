@@ -27,7 +27,7 @@ window.MascotsCtrl = function($scope) {
     return includedByTag(mascot.tag) && includedByText(mascot);
   };
   $scope.tooltip = function(mascot) {
-    return '<img src="' + mascot.imageUrl + '">';
+    return '<img src="' + mascot.imageUrl + '" class="img-responsive">';
   };
   $scope.pick = function(mascot) {
     remove(mascot);

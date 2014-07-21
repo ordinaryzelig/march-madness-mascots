@@ -22,7 +22,7 @@ window.MascotsCtrl = ($scope) ->
     includedByTag(mascot.tag) and includedByText(mascot)
 
   $scope.tooltip = (mascot) ->
-    '<img src="' + mascot.imageUrl + '">'
+    '<img src="' + mascot.imageUrl + '" class="img-responsive">'
 
   $scope.pick = (mascot) ->
     remove(mascot)
