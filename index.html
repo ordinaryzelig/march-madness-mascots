@@ -14,12 +14,14 @@
   <body ng-controller="MascotsCtrl">
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container-fluid">
-        <h1 class="navbar-left">
-          March Madness Mascots {{year}}
-        </h1>
-        <div class="navbar-right" id="yearSelection">
-          <label for="yearSelect">Select a different year </label><select id="yearSelect" ng-change="changeYear()" ng-model="year" ng-options="year for year in yearOptions"></select>
-        </div>
+        <h3 class="navbar-left" id="title">
+          March Madness Mascots
+        </h3>
+        <form class="navbar-form">
+          <div class="form-group">
+            <select class="form-control" id="year_select" ng-change="changeYear()" ng-model="year" ng-options="year for year in yearOptions"></select>
+          </div>
+        </form>
       </div>
     </nav>
     <div class="container-fluid" id="main">

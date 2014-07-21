@@ -20,10 +20,10 @@ html[lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' ng-app='
 
     nav.navbar.navbar-fixed-top.navbar-inverse{role='navigation'}
       .container-fluid
-        h1.navbar-left March Madness Mascots {{year}}
-        #yearSelection.navbar-right
-          label{for="yearSelect"} Select a different year 
-          select#yearSelect{ng-change='changeYear()' ng-model='year' ng-options='year for year in yearOptions'}
+        h3#title.navbar-left March Madness Mascots
+        form.navbar-form
+          .form-group
+            select#year_select.form-control{ng-change='changeYear()' ng-model='year' ng-options='year for year in yearOptions'}
 
     #main.container-fluid
 

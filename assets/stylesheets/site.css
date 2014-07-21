@@ -1,3 +1,11 @@
+nav {
+  color: white; }
+  nav #title {
+    color: #0272bf; }
+  nav #year_select {
+    margin-top: 5px;
+    margin-left: 10px; }
+
 #main {
   padding-left: 30px;
   padding-right: 30px;
