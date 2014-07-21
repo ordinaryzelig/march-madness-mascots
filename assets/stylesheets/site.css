@@ -23,3 +23,10 @@
   background-color: #eeeeee;
   padding: 5px;
   overflow: scroll; }
+  #ranks .sidebar-fixed .ranked:hover {
+    background-color: #dddddd; }
+  #ranks .sidebar-fixed .ranked .glyphicon {
+    margin-right: 5px; }
+    #ranks .sidebar-fixed .ranked .glyphicon:hover {
+      cursor: pointer;
+      color: white; }

@@ -24,9 +24,16 @@ window.MascotsCtrl = ($scope) ->
   $scope.tooltip = (mascot) ->
     '<img src="' + mascot.imageUrl + '" class="img-responsive">'
 
+  #########
+  # Picking
+
   $scope.pick = (mascot) ->
     remove(mascot)
     rank(mascot)
+
+  $scope.unpick = (mascot) ->
+    unrank(mascot)
+    reAdd(mascot)
 
   remove = (mascot) ->
     index = $scope.mascots.indexOf(mascot)
@@ -34,6 +41,15 @@ window.MascotsCtrl = ($scope) ->
 
   rank = (mascot) ->
     $scope.ranks.push mascot
+
+  reAdd = (mascot) ->
+    $scope.mascots.push(mascot)
+
+  unrank = (mascot) ->
+    index = $scope.ranks.indexOf(mascot)
+    $scope.ranks.splice(index, 1)
+
+  #########
 
   # Toggle instructions
   $scope.rankingInstructionsCollapsed = true

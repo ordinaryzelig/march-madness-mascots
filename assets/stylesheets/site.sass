@@ -25,7 +25,17 @@ $ranks_column_width: 20%
   position: fixed
   height: 85%
 
-#ranks .sidebar-fixed
-  background-color: #eee
-  padding: 5px
-  overflow: scroll
+#ranks
+  .sidebar-fixed
+    background-color: #eee
+    padding: 5px
+    overflow: scroll
+
+    .ranked
+      &:hover
+        background-color: #ddd
+      .glyphicon
+        margin-right: 5px
+        &:hover
+          cursor: pointer
+          color: white

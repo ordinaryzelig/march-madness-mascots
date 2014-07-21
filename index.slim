@@ -6,6 +6,7 @@ html[lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' ng-app='
     script[src='assets/javascripts/angular.min.js']
     script[src='assets/javascripts/underscore-min.js']
 
+    /* bootstrap */
     script[src='assets/bootstrap/ui-bootstrap-tpls-0.11.0.min.js']
     link[href='assets/bootstrap/bootstrap.css' media='screen' rel='stylesheet' type='text/css']
 
@@ -87,5 +88,7 @@ html[lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' ng-app='
 
             h4 Save these so you don't lose them.
 
-            ol#ranks
-              li{ng-repeat='mascot in ranks'}= '{{mascot.school}} {{mascot.name}}'
+            ol
+              li.ranked{ng-repeat='mascot in ranks'}
+                span.glyphicon.glyphicon-remove-circle{ng-click='unpick(mascot)'}
+                span= '{{mascot.school}} {{mascot.name}}'

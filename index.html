@@ -115,9 +115,9 @@
             <h4>
               Save these so you don't lose them.
             </h4>
-            <ol id="ranks">
-              <li ng-repeat="mascot in ranks">
-                {{mascot.school}} {{mascot.name}}
+            <ol>
+              <li class="ranked" ng-repeat="mascot in ranks">
+                <span class="glyphicon glyphicon-remove-circle" ng-click="unpick(mascot)"></span><span>{{mascot.school}} {{mascot.name}}</span>
               </li>
             </ol>
           </div>

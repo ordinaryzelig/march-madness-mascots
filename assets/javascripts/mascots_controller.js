@@ -1,7 +1,7 @@
 angular.module('sure', ['ui.bootstrap']);
 
 window.MascotsCtrl = function($scope) {
-  var checkedTags, defaultYear, includedByTag, includedByText, init, loadData, loadYear, rank, remove, tags, years;
+  var checkedTags, defaultYear, includedByTag, includedByText, init, loadData, loadYear, rank, reAdd, remove, tags, unrank, years;
   loadData = function() {
     $scope.data = {};
     return _(Object.keys(data)).each(function(year) {
@@ -33,6 +33,10 @@ window.MascotsCtrl = function($scope) {
     remove(mascot);
     return rank(mascot);
   };
+  $scope.unpick = function(mascot) {
+    unrank(mascot);
+    return reAdd(mascot);
+  };
   remove = function(mascot) {
     var index;
     index = $scope.mascots.indexOf(mascot);
@@ -40,6 +44,14 @@ window.MascotsCtrl = function($scope) {
   };
   rank = function(mascot) {
     return $scope.ranks.push(mascot);
+  };
+  reAdd = function(mascot) {
+    return $scope.mascots.push(mascot);
+  };
+  unrank = function(mascot) {
+    var index;
+    index = $scope.ranks.indexOf(mascot);
+    return $scope.ranks.splice(index, 1);
   };
   $scope.rankingInstructionsCollapsed = true;
   $scope.bracketInstructionsCollapsed = true;
