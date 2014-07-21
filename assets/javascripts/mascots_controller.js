@@ -76,7 +76,7 @@ window.MascotsCtrl = function($scope) {
     return mascot.matches($scope.filterText);
   };
   loadYear = function() {
-    $scope.mascots = $scope.data[$scope.year];
+    $scope.mascots = _($scope.data[$scope.year]).shuffle();
     window.mascots = $scope.mascots;
     $scope.tags = tags();
     return $scope.ranks = [];

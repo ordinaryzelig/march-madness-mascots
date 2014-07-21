@@ -69,7 +69,7 @@ window.MascotsCtrl = ($scope) ->
     mascot.matches($scope.filterText)
 
   loadYear = ->
-    $scope.mascots = $scope.data[$scope.year]
+    $scope.mascots = _($scope.data[$scope.year]).shuffle()
     window.mascots = $scope.mascots
     $scope.tags    = tags()
     $scope.ranks   = []
