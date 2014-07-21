@@ -20,7 +20,7 @@ class Mascot < Struct.new(:school, :name, :tag)
         hash[year] = mascots.map(&:attributes)
       end
       json = JSON.pretty_generate(all_as_attributes)
-      File.open("./public/javascripts/data.js", 'w') do |f|
+      File.open("./assets/javascripts/data.js", 'w') do |f|
         f.write "window.data = "
         f.write json
       end

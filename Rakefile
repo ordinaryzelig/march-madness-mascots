@@ -1,11 +1,6 @@
 require 'rake/testtask'
 
-task :default => :test
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'spec'
-  t.pattern = 'spec/**/*.spec.rb'
-end
+task :default => 'mascots:compile'
 
 task :init do
   require_relative 'init'
@@ -15,7 +10,9 @@ namespace :mascots do
 
   desc 'Convert CSVs into runnable JS.'
   task :compile => :init do
+    puts 'compiling'
     Mascot.compile_all!
+    puts 'done'
   end
 
 end

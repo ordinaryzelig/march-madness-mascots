@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'orm_from_csv', '0.1.0' # To import mascots.
+gem 'rake'
 
 group :development do
   gem 'growl', '1.0.3'
