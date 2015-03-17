@@ -1501,7 +1501,7 @@ window.data = {
     {
       "school": "Ole Miss",
       "name": "Rebels",
-      "tag": "human"
+      "tag": "bear"
     },
     {
       "school": "Baylor",
