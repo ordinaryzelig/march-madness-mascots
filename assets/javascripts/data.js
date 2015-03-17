@@ -1361,5 +1361,347 @@ window.data = {
       "name": "Mustangs",
       "tag": "horse"
     }
+  ],
+  "2015": [
+    {
+      "school": "Kentucky",
+      "name": "Wildcats",
+      "tag": "cat"
+    },
+    {
+      "school": "Hampton",
+      "name": "Pirates",
+      "tag": "human"
+    },
+    {
+      "school": "Manhattan",
+      "name": "Jaspers",
+      "tag": "other"
+    },
+    {
+      "school": "Cincinnati",
+      "name": "Bearcats",
+      "tag": "other"
+    },
+    {
+      "school": "Purdue",
+      "name": "Boilermakers",
+      "tag": "human"
+    },
+    {
+      "school": "West Virginia",
+      "name": "Mountaineers",
+      "tag": "human"
+    },
+    {
+      "school": "Buffalo",
+      "name": "Bulls",
+      "tag": "horned"
+    },
+    {
+      "school": "Maryland",
+      "name": "Terrapins",
+      "tag": "reptile"
+    },
+    {
+      "school": "Valparaiso",
+      "name": "Crusaders",
+      "tag": "human"
+    },
+    {
+      "school": "Butler",
+      "name": "Bulldogs",
+      "tag": "dog"
+    },
+    {
+      "school": "Texas",
+      "name": "Longhorns",
+      "tag": "horned"
+    },
+    {
+      "school": "Notre Dame",
+      "name": "Fighting Irish",
+      "tag": "human"
+    },
+    {
+      "school": "Northeastern",
+      "name": "Huskies",
+      "tag": "dog"
+    },
+    {
+      "school": "Wichita State",
+      "name": "Shockers",
+      "tag": "???"
+    },
+    {
+      "school": "Indiana",
+      "name": "Hoosiers",
+      "tag": "other"
+    },
+    {
+      "school": "Kansas",
+      "name": "Jayhawks",
+      "tag": "bird"
+    },
+    {
+      "school": "New Mexico State",
+      "name": "Aggies",
+      "tag": "human"
+    },
+    {
+      "school": "Wisconsin",
+      "name": "Badgers",
+      "tag": "other"
+    },
+    {
+      "school": "Coastal Carolina",
+      "name": "Chanticleers",
+      "tag": "bird"
+    },
+    {
+      "school": "Oregon",
+      "name": "Ducks",
+      "tag": "bird"
+    },
+    {
+      "school": "Oklahoma St.",
+      "name": "Cowboys",
+      "tag": "evil"
+    },
+    {
+      "school": "Arkansas",
+      "name": "Razorbacks",
+      "tag": "horned"
+    },
+    {
+      "school": "Wofford",
+      "name": "Terriers",
+      "tag": "dog"
+    },
+    {
+      "school": "North Carolina",
+      "name": "Tarheels",
+      "tag": "horned"
+    },
+    {
+      "school": "Harvard",
+      "name": "Crimson",
+      "tag": "human"
+    },
+    {
+      "school": "Xavier",
+      "name": "Musketeers",
+      "tag": "???"
+    },
+    {
+      "school": "BYU",
+      "name": "Cougars",
+      "tag": "cat"
+    },
+    {
+      "school": "Ole Miss",
+      "name": "Rebels",
+      "tag": "human"
+    },
+    {
+      "school": "Baylor",
+      "name": "Bears",
+      "tag": "bear"
+    },
+    {
+      "school": "Georgia State",
+      "name": "Panthers",
+      "tag": "cat"
+    },
+    {
+      "school": "VCU",
+      "name": "Rams",
+      "tag": "horned"
+    },
+    {
+      "school": "Ohio State",
+      "name": "Buckeyes",
+      "tag": "???"
+    },
+    {
+      "school": "Arizona",
+      "name": "Wildcats",
+      "tag": "cat"
+    },
+    {
+      "school": "Texas Southern",
+      "name": "Tigers",
+      "tag": "cat"
+    },
+    {
+      "school": "Villanova",
+      "name": "Wildcats",
+      "tag": "cat"
+    },
+    {
+      "school": "Lafayette",
+      "name": "Leopards",
+      "tag": "cat"
+    },
+    {
+      "school": "NC State",
+      "name": "Wolfpack",
+      "tag": "dog"
+    },
+    {
+      "school": "LSU",
+      "name": "Tigers",
+      "tag": "cat"
+    },
+    {
+      "school": "Northern Iowa",
+      "name": "Panthers",
+      "tag": "cat"
+    },
+    {
+      "school": "Wyoming",
+      "name": "Cowboys",
+      "tag": "human"
+    },
+    {
+      "school": "Louisville",
+      "name": "Cardinals",
+      "tag": "bird"
+    },
+    {
+      "school": "UC Irvine",
+      "name": "Anteaters",
+      "tag": "other"
+    },
+    {
+      "school": "Providence",
+      "name": "Friar Boys",
+      "tag": "evil"
+    },
+    {
+      "school": "Boise State",
+      "name": "Broncos",
+      "tag": "horse"
+    },
+    {
+      "school": "Dayton",
+      "name": "Flyers",
+      "tag": "human"
+    },
+    {
+      "school": "Oklahoma",
+      "name": "Sooners",
+      "tag": "horse"
+    },
+    {
+      "school": "Albany",
+      "name": "Great Danes",
+      "tag": "dog"
+    },
+    {
+      "school": "Michigan State",
+      "name": "Spartans",
+      "tag": "human"
+    },
+    {
+      "school": "Georgia",
+      "name": "Bulldogs",
+      "tag": "dog"
+    },
+    {
+      "school": "Virginia",
+      "name": "Cavaliers",
+      "tag": "human"
+    },
+    {
+      "school": "Belmont",
+      "name": "Bruins",
+      "tag": "bear"
+    },
+    {
+      "school": "Duke",
+      "name": "Blue Devils",
+      "tag": "evil"
+    },
+    {
+      "school": "North Florida",
+      "name": "Ospreys",
+      "tag": "bird"
+    },
+    {
+      "school": "Robert Morris",
+      "name": "Colonials",
+      "tag": "human"
+    },
+    {
+      "school": "San Diego State",
+      "name": "Aztecs",
+      "tag": "human"
+    },
+    {
+      "school": "St. John's",
+      "name": "Red Storm",
+      "tag": "bird"
+    },
+    {
+      "school": "Utah",
+      "name": "Runnin' Utes",
+      "tag": "bird"
+    },
+    {
+      "school": "Steven F. Austin",
+      "name": "Lumberjacks",
+      "tag": "human"
+    },
+    {
+      "school": "Georgetown",
+      "name": "Hoyas",
+      "tag": "dog"
+    },
+    {
+      "school": "Eastern Washington",
+      "name": "Eagles",
+      "tag": "bird"
+    },
+    {
+      "school": "SMU",
+      "name": "Mustangs",
+      "tag": "horse"
+    },
+    {
+      "school": "UCLA",
+      "name": "Bruins",
+      "tag": "bear"
+    },
+    {
+      "school": "Iowa State",
+      "name": "Cyclones",
+      "tag": "bird"
+    },
+    {
+      "school": "UAB",
+      "name": "Blazers",
+      "tag": "reptile"
+    },
+    {
+      "school": "Iowa",
+      "name": "Hawkeyes",
+      "tag": "bird"
+    },
+    {
+      "school": "Davidson",
+      "name": "Wildcats",
+      "tag": "cat"
+    },
+    {
+      "school": "Gonzaga",
+      "name": "Bulldogs",
+      "tag": "dog"
+    },
+    {
+      "school": "North Dakota State",
+      "name": "Bison",
+      "tag": "horned"
+    }
   ]
 }
